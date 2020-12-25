@@ -56,7 +56,10 @@
         "paths": ["src"]
       },
       "alias": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx", ".json"]
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".json"],
+        "map": [
+          ["@components", "./src/components"]
+        ]
       }
     }
   },
