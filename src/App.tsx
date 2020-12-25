@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import logo from './logo.svg'
+import './App.css'
 
 interface AppProps {}
 
 function App({}: AppProps) {
   // Create the count state.
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
   // Create the counter (+1 every second).
   useEffect(() => {
-    const timer = setTimeout(() => setCount(count + 1), 1000);
-    return () => clearTimeout(timer);
-  }, [count, setCount]);
+    const timer = setTimeout(() => setCount(count + 1), 1000)
+    return () => clearTimeout(timer)
+  }, [count, setCount])
   // Return the App component.
   return (
     <div className="App">
@@ -28,14 +28,13 @@ function App({}: AppProps) {
             className="App-link"
             href="https://reactjs.org"
             target="_blank"
-            rel="noopener noreferrer"
-          >
+            rel="noopener noreferrer">
             Learn React
           </a>
         </p>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
