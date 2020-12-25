@@ -8,6 +8,7 @@ module.exports = {
     '@snowpack/plugin-react-refresh',
     '@snowpack/plugin-dotenv',
     '@snowpack/plugin-typescript',
+    '@snowpack/plugin-postcss',
   ],
   install: [
     /* ... */
@@ -27,4 +28,9 @@ module.exports = {
   alias: {
     /* ... */
   },
+
+  // Trying experimental feature; snowpack@next
+  // experiments: {
+  //   source: 'skypack'
+  // }
 };
