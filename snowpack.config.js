@@ -9,6 +9,7 @@ module.exports = {
     '@snowpack/plugin-dotenv',
     '@snowpack/plugin-typescript',
     '@snowpack/plugin-postcss',
+    '@snowpack/plugin-sass',
   ],
   install: [
     /* ... */
@@ -27,6 +28,8 @@ module.exports = {
   },
   alias: {
     '@components': './src/components',
+    '@utils': './src/utils/',
+    '@types': './src/types.ts',
   },
 
   // Trying experimental feature; snowpack@next

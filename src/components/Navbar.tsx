@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Menu, Transition } from '@headlessui/react'
+import { Link } from '@reach/router'
 
 // https://tailwindui.com/components#product-application-ui-application-shells
 
@@ -10,34 +11,53 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div className="flex flex-shrink-0">
-              <img
-                className="h-8 w-8"
-                src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                alt="Workflow"
-              />
-              <h2 className="text-white text-xl ml-2">HoneyDB</h2>
-            </div>
+            <Link to="/">
+              <div className="flex flex-shrink-0 cursor-pointer">
+                <img
+                  className="h-8 w-8"
+                  src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                  alt="Workflow"
+                />
+                <h2 className="text-white text-xl ml-2">HoneyDB</h2>
+              </div>
+            </Link>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-                <a
-                  href="#"
-                  className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">
+                <Link
+                  to="/bad-hosts"
+                  getProps={({ isCurrent }) => ({
+                    className: `${
+                      isCurrent
+                        ? 'bg-gray-900 text-white'
+                        : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                    } px-3 py-2 rounded-md text-sm font-medium`,
+                  })}>
                   Bad hosts
-                </a>
+                </Link>
 
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                <Link
+                  to="/twitter-threats"
+                  getProps={({ isCurrent }) => ({
+                    className: `${
+                      isCurrent
+                        ? 'bg-gray-900 text-white'
+                        : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                    } px-3 py-2 rounded-md text-sm font-medium`,
+                  })}>
                   Twitter Threat Feed
-                </a>
+                </Link>
 
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                  Service
-                </a>
+                {/* <Link
+                  to="/services"
+                  getProps={({ isCurrent }) => ({
+                    className: `${
+                      isCurrent
+                        ? 'bg-gray-900 text-white'
+                        : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                    } px-3 py-2 rounded-md text-sm font-medium`,
+                  })}>
+                  Services
+                </Link> */}
               </div>
             </div>
           </div>
@@ -151,18 +171,41 @@ export default function Navbar() {
     --> */}
       <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-          <a
-            href="#"
-            className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">
-            Dashboard
-          </a>
+          <Link
+            to="/bad-hosts"
+            getProps={({ isCurrent }) => ({
+              className: `${
+                isCurrent
+                  ? 'bg-gray-900 text-white'
+                  : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+              } px-3 py-2 rounded-md text-base font-medium`,
+            })}>
+            Bad hosts
+          </Link>
 
-          <a
-            href="#"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-            Team
-          </a>
+          <Link
+            to="/twitter-threats"
+            getProps={({ isCurrent }) => ({
+              className: `${
+                isCurrent
+                  ? 'bg-gray-900 text-white'
+                  : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+              } px-3 py-2 rounded-md text-base font-medium`,
+            })}>
+            Twitter Threat Feed
+          </Link>
+
+          {/* <Link
+            to="/services"
+            getProps={({ isCurrent }) => ({
+              className: `${
+                isCurrent
+                  ? 'bg-gray-900 text-white'
+                  : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+              } px-3 py-2 rounded-md text-base font-medium`,
+            })}>
+            Services
+          </Link> */}
         </div>
         <div className="pt-4 pb-3 border-t border-gray-700">
           <div className="flex items-center px-5">
