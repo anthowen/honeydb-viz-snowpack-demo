@@ -16,6 +16,21 @@ Tech stack:
 - **react-table** _for table management_
 - **react-simple-maps** _for map viz_
 
+## Features
+
+- [**Bad Hosts**](https://honeydb-viz.netlify.app/bad-hosts) page
+
+  This page renders the zoomable map from the vulnerability csv data fetched from one of my other repo. (There is a description in the page)
+
+- [**Twitter Threat Feed**](https://honeydb-viz.netlify.app/twitter-threats) page
+
+  This page renders the ip list data in a paginated table format. (There is a description in the page)
+  
+- Declarative, reponsive menu bar
+
+- Mobile-friendly website
+
+
 ## Available Scripts
 
 ### yarn start
