@@ -50,6 +50,11 @@ Though it was challening (There's still a known [issue](https://github.com/antho
   
   ![](public/twitter-threat-feed-mobile.png)
 
+## Tests
+
+- Unit tests of **App**, **Header**, and **Navbar** components
+
+- Integration test for **useTwThreatFeed** custom hook that feeds data into UI component
 
 ## Available Scripts
 
