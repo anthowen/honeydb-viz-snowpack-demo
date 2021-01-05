@@ -1,10 +1,10 @@
 import * as React from 'react'
+import type { Column } from 'react-table'
 import { Container, Loader } from '@components'
 import type { RouteComponentProps } from '@reach/router'
 import type { BadHost } from '@types'
 import useTwThreadFeed from './useTwThreadFeed'
 import Table from './Table'
-import type { Column } from 'react-table'
 
 type Props = {} & RouteComponentProps
 
@@ -27,11 +27,25 @@ export default function TwitterThreats(props: Props) {
     []
   )
 
-  const { status, data, error } = useTwThreadFeed()
+  const { status, data, error, isFetching } = useTwThreadFeed()
 
   return (
     <Container title="Twitter Threat Feed">
-      {status === 'loading' ? (
+      <p className="mb-4 px-2 md:px-0">
+        <b>Twitter threat feed</b> provides a list of bad hosts that have
+        connected or attempted to connect to other honeypots on the Internet
+        (even honeypots that do not directly send data to HoneyDB). The source
+        of this bad host information is based on tweets by these other
+        honeypots, example:
+        <a
+          href="https://honeydb.io/#twitter"
+          target="_blank"
+          className="cursor-pointer text-blue-500 hover:text-blue-700 hover:underline ml-1">
+          https://honeydb.io/#twitter
+        </a>
+        . Here is the feed data reported during the last 24 hours.
+      </p>
+      {status === 'loading' || isFetching ? (
         <div className="flex justify-center items-center">
           <Loader />
         </div>

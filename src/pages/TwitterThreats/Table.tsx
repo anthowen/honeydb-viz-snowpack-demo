@@ -38,7 +38,7 @@ export default function Table<T extends object>({
 
   // Render the UI for your table
   return (
-    <div className="table-container">
+    <div className="table-container mx-2 md:mx-0">
       <div className="table-wrap">
         <table {...getTableProps()}>
           <thead>
@@ -100,6 +100,9 @@ export default function Table<T extends object>({
               const page = e.target.value ? Number(e.target.value) - 1 : 0
               gotoPage(page)
             }}
+            min="1"
+            max={pageCount}
+            className="mx-1 border border-gray-400 rounded py-1 px-2 focus:outline-none focus:border-gray-500"
             style={{ width: '100px' }}
           />
         </span>{' '}

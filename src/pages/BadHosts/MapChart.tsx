@@ -28,7 +28,7 @@ function MapChart({ setTooltipContent, data }: Props) {
       <ComposableMap
         data-tip=""
         projectionConfig={{
-          rotate: [-10, 0, 0],
+          rotate: [30, 0, 0],
           scale: 147,
           center: [0, -30],
         }}>
