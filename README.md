@@ -28,7 +28,13 @@ Tech stack:
   
 - Declarative, reponsive menu bar
 
+  ![](public/menu-bar.png)
+
 - Mobile-friendly website
+
+  ![](public/bad-hosts-mobile.png)
+  
+  ![](public/twitter-threat-feed-mobile.png)
 
 
 ## Available Scripts
