@@ -6,7 +6,7 @@
 
 Live URL: https://honeydb-viz.netlify.app/
 
-Tech stack:
+## Tech stack:
 
 - **snowpack** _to leverage modern web_
 - **TypeScript** _for sane development_
@@ -15,6 +15,20 @@ Tech stack:
 - **react-query** _for server state management_
 - **react-table** _for table management_
 - **react-simple-maps** _for map viz_
+
+## Why Snowpack?
+
+Now, it's time for the modern web, where 95% of web traffic are from the modern web browsers that natively support [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
+
+I've chosen [**snowpack**](https://www.snowpack.dev/) instead of **create-react-app** to have a deep DX on the lightning-fast build, designed for the modern web. Snowpack is packed with rollup and [esbuild](https://github.com/evanw/esbuild) under the hood, which is 10-100x faster than other bundlers like webpack or parcel. 
+
+On top of this, one thing made me excited and fascinated is the snowpack's experimental [**NO more NODE_MODULES**](https://www.snowpack.dev/posts/2020-12-03-snowpack-3-release-candidate) feature, which is about importing 3rd-party libraries directly from the Skypack CDN like [deno](https://deno.land/manual/linking_to_external_code).
+
+Though it was challening (There's still a known [issue](https://github.com/anthowen/abuseip-viz/blob/main/src/utils/const.ts#L2)), but I really loved building all this from scratch, and it helped me gain great experiences with the modern web world.
+
+## About HoneyDB
+
+[HoneyDB](https://honeydb.io/about) provides real time data of honeypot activity. This data comes from honeypot sensors deployed globally on the Internet.
 
 ## Features
 
@@ -58,20 +72,3 @@ Your app is ready to be deployed!
 
 Goes through the Jest unit tests of the project.
 Run with the `--watch` flag (`npm test -- --watch`) to run in interactive watch mode.
-
-
-## Why Snowpack?
-
-Now, it's time for the modern web, where 95% of web traffic are from the modern web browsers that natively support [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
-
-I've chosen [**snowpack**](https://www.snowpack.dev/) instead of **create-react-app** to have a deep DX on the lightning-fast build, designed for the modern web. Snowpack is packed with rollup and [esbuild](https://github.com/evanw/esbuild) under the hood, which is 10-100x faster than other bundlers like webpack or parcel. 
-
-On top of this, one thing made me excited and fascinated is the snowpack's experimental [**NO more NODE_MODULES**](https://www.snowpack.dev/posts/2020-12-03-snowpack-3-release-candidate) feature, which is about importing 3rd-party libraries directly from the Skypack CDN like [deno](https://deno.land/manual/linking_to_external_code).
-
-Though it was challening (There's still a known [issue](https://github.com/anthowen/abuseip-viz/blob/main/src/utils/const.ts#L2)), but I really loved building all this from scratch, and it helped me gain great experiences with the modern web world.
-
-## About HoneyDB
-
-[HoneyDB](https://honeydb.io/about) provides real time data of honeypot activity. This data comes from honeypot sensors deployed globally on the Internet.
-
-
