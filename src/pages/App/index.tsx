@@ -1,7 +1,8 @@
 import * as React from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
-import { Navbar } from '@components'
+import { ErrorBoundary } from 'react-error-boundary'
+import { Navbar, ErrorFallback } from '@components'
 import Routes from './Router'
 
 const queryClient = new QueryClient({
@@ -14,11 +15,13 @@ const queryClient = new QueryClient({
 
 export default function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <Navbar />
-      <Routes />
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
+      <QueryClientProvider client={queryClient}>
+        <Navbar />
+        <Routes />
 
-      <ReactQueryDevtools initialIsOpen />
-    </QueryClientProvider>
+        <ReactQueryDevtools initialIsOpen />
+      </QueryClientProvider>
+    </ErrorBoundary>
   )
 }
