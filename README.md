@@ -75,5 +75,5 @@ Your app is ready to be deployed!
 
 ### yarn test
 
-Goes through the Jest unit tests of the project.
-Run with the `--watch` flag (`npm test -- --watch`) to run in interactive watch mode.
+Goes through the Jest tests of the project.
+Do `yarn test:watch` to run in interactive watch mode.
