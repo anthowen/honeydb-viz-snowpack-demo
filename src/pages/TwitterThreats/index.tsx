@@ -3,7 +3,7 @@ import type { Column } from 'react-table'
 import { Container, Loader } from '@components'
 import type { RouteComponentProps } from '@reach/router'
 import type { BadHost } from '@types'
-import useTwThreadFeed from './useTwThreadFeed'
+import useTwThreatFeed from './useTwThreatFeed'
 import Table from './Table'
 
 type Props = {} & RouteComponentProps
@@ -27,7 +27,7 @@ export default function TwitterThreats(props: Props) {
     []
   )
 
-  const { status, data, error, isFetching } = useTwThreadFeed()
+  const { status, data, error, isFetching } = useTwThreatFeed()
 
   return (
     <Container title="Twitter Threat Feed">

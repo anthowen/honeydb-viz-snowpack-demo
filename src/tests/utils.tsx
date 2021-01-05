@@ -20,9 +20,3 @@ export function renderWithRouter(
     history,
   }
 }
-
-describe('Test utils', () => {
-  it('just works fine', () => {
-    renderWithRouter(<></>)
-  })
-})

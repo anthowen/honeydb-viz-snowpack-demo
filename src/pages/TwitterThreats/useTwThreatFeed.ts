@@ -3,7 +3,7 @@ import axios from 'axios'
 import { axiosClient } from '@utils/request'
 import type { BadHost } from '@types'
 
-const getTwThreadFeed = async () => {
+const getTwThreatFeed = async () => {
   // Create a new CancelToken source for this request
   const source = axios.CancelToken.source()
   const { data } = await axiosClient.get('/twitter-threat-feed', {
@@ -18,11 +18,11 @@ const getTwThreadFeed = async () => {
   return data
 }
 
-export default function useTwThreadFeed() {
-  return useQuery<BadHost[], Error>('twitter-threat-feed', getTwThreadFeed)
+export default function useTwThreatFeed() {
+  return useQuery<BadHost[], Error>('twitter-threat-feed', getTwThreatFeed)
 }
 
-// return useQuery<BadHost[], Error>('twitter-threat-feed', getTwThreadFeed, {
+// return useQuery<BadHost[], Error>('twitter-threat-feed', getTwThreatFeed, {
 //   onSuccess: (data) => {
 //     for (const badHost of data) {
 //       axios
