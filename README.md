@@ -41,7 +41,7 @@ Run with the `--watch` flag (`npm test -- --watch`) to run in interactive watch 
 
 ## Why Snowpack?
 
-Now, it's time for the modern web, where 95% of web traffic are from the modern web browsers that support [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
+Now, it's time for the modern web, where 95% of web traffic are from the modern web browsers that natively support [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
 
 I've chosen [**snowpack**](https://www.snowpack.dev/) instead of **create-react-app** to have a deep DX on the lightning-fast build, designed for the modern web. Snowpack is packed with rollup and [esbuild](https://github.com/evanw/esbuild) under the hood, which is 10-100x faster than other bundlers like webpack or parcel. 
 
