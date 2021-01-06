@@ -30,6 +30,7 @@
     "react-simple-maps": "^2.3.0",
     "react-table": "^7.6.2",
     "react-tooltip": "^4.2.11",
+    "react-twitter-widgets": "^1.9.5",
     "tailwindcss": "^2.0.2"
   },
   "devDependencies": {

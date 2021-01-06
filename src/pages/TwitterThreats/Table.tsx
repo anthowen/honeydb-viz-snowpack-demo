@@ -1,3 +1,4 @@
+import { Link } from '@reach/router'
 import * as React from 'react'
 import { useTable, usePagination, TableOptions } from 'react-table'
 import './Table.scss'
@@ -59,7 +60,15 @@ export default function Table<T extends object>({
                 <tr {...row.getRowProps()}>
                   {row.cells.map((cell) => {
                     return (
-                      <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                      <td {...cell.getCellProps()}>
+                        {cell.value === 'remoteHost' ? (
+                          <Link to={`/threat-tweets/${cell.render('Cell')}`}>
+                            {cell.render('Cell')}
+                          </Link>
+                        ) : (
+                          cell.render('Cell')
+                        )}
+                      </td>
                     )
                   })}
                 </tr>

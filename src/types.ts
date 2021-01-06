@@ -3,3 +3,10 @@ export type BadHost = {
   count: string
   lastSeen: string
 }
+
+export type ThreatTweet = {
+  tweetId: string
+  created: Date
+  screenName: string
+  tweetText: string
+}
