@@ -40,6 +40,10 @@ Though it was challening (There's still a known [issue](https://github.com/antho
 
   This page renders the IP list data in a paginated table format. (There is a description in the page)
   
+- **Threat Tweets** page 
+
+  This page renders the list of tweets that reported the certain IP address provided via URL.
+  
 - Declarative, reponsive menu bar
   (Dropdown menu is just a placeholder)
 
