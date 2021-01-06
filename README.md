@@ -38,9 +38,10 @@ Though it was challening (There's still a known [issue](https://github.com/antho
 
 - [**Twitter Threat Feed**](https://honeydb-viz.netlify.app/twitter-threats) page
 
-  This page renders the ip list data in a paginated table format. (There is a description in the page)
+  This page renders the IP list data in a paginated table format. (There is a description in the page)
   
 - Declarative, reponsive menu bar
+  (Dropdown menu is just a placeholder)
 
   ![](public/menu-bar.png)
 
