@@ -1,36 +1,52 @@
 import * as React from 'react'
-import { Container, Loader } from '@components'
-import type { RouteComponentProps } from '@reach/router'
-import useThreatTweets from '../ThreatTweets/useThreatTweets'
 import { Tweet } from 'react-twitter-widgets'
+import { navigate, RouteComponentProps } from '@reach/router'
+import { Container, Loader } from '@components'
+import useThreatTweets from '../ThreatTweets/useThreatTweets'
 
 type Props = { ipAddress?: string } & RouteComponentProps
 
 export default function ThreatTweets({ ipAddress }: Props) {
-  const { status, data, error, isFetching } = useThreatTweets(ipAddress)
+  const { status, data, error } = useThreatTweets(ipAddress)
 
-  console.log('ipAddress', ipAddress)
+  const handleBackClick = () => {
+    navigate(-1)
+  }
 
   return ipAddress ? (
     <Container title={`Threat tweets on ${ipAddress}`}>
-      <p className="mb-4 px-2 md:px-0">
-        Here is the list of tweets that reported <b>{ipAddress}</b> directly
-        over Twitter.
-      </p>
-      {status === 'loading' || isFetching ? (
+      {status === 'loading' ? (
         <div className="flex justify-center items-center">
           <Loader />
         </div>
       ) : status === 'error' ? (
         <span>Error: {error?.message}</span>
       ) : data ? (
-        <div className="flex justify-center items-center">
-          {data.map((tw) => (
-            <div className="my-4">
-              <Tweet tweetId={tw.tweetId} />
-            </div>
-          ))}
-        </div>
+        <>
+          <p className="mb-4 px-2 md:px-0">
+            {data.length > 0 ? (
+              <>
+                There {data.length > 1 ? 'have' : 'has'} been {data.length}{' '}
+                {data.length > 1 ? 'tweets' : 'tweet'} that reported{' '}
+                <b>{ipAddress}</b> directly over Twitter.
+              </>
+            ) : (
+              'No tweets found'
+            )}
+            {/* <span
+              className="cursor-pointer text-blue-500 hover:text-blue-700 hover:underline ml-1"
+              onClick={handleBackClick}>
+              {'< Back to the list'}
+            </span> */}
+          </p>
+          <div className="flex flex-col justify-center items-center">
+            {data.map((tw) => (
+              <div className="px-2 my-2 w-full">
+                <Tweet tweetId={tw.tweetId} />
+              </div>
+            ))}
+          </div>
+        </>
       ) : null}
     </Container>
   ) : (

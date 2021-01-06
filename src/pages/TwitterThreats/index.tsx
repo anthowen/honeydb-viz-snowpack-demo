@@ -27,7 +27,7 @@ export default function TwitterThreats(props: Props) {
     []
   )
 
-  const { status, data, error, isFetching } = useTwThreatFeed()
+  const { status, data, error } = useTwThreatFeed()
 
   return (
     <Container title="Twitter Threat Feed">
@@ -45,7 +45,7 @@ export default function TwitterThreats(props: Props) {
         </a>
         . Here is the feed data reported during the last 24 hours.
       </p>
-      {status === 'loading' || isFetching ? (
+      {status === 'loading' ? (
         <div className="flex justify-center items-center">
           <Loader />
         </div>

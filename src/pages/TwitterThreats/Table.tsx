@@ -61,8 +61,11 @@ export default function Table<T extends object>({
                   {row.cells.map((cell) => {
                     return (
                       <td {...cell.getCellProps()}>
-                        {cell.value === 'remoteHost' ? (
-                          <Link to={`/threat-tweets/${cell.render('Cell')}`}>
+                        {cell.column.Header === 'Remote Host' ? (
+                          <Link
+                            to={`/threat-tweets/${cell.value}`}
+                            target="_blank"
+                            className="cursor-pointer text-blue-500 hover:text-blue-700 hover:underline ml-1">
                             {cell.render('Cell')}
                           </Link>
                         ) : (

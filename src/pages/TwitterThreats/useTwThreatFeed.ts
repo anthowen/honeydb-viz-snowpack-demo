@@ -3,6 +3,8 @@ import axios from 'axios'
 import { axiosClient } from '@utils/request'
 import type { BadHost } from '@types'
 
+// API docs: https://honeydb.io/threats#twitter_threat_feed
+
 const getTwThreatFeed = async () => {
   // Create a new CancelToken source for this request
   const source = axios.CancelToken.source()
@@ -21,15 +23,3 @@ const getTwThreatFeed = async () => {
 export default function useTwThreatFeed() {
   return useQuery<BadHost[], Error>('twitter-threat-feed', getTwThreatFeed)
 }
-
-// return useQuery<BadHost[], Error>('twitter-threat-feed', getTwThreatFeed, {
-//   onSuccess: (data) => {
-//     for (const badHost of data) {
-//       axios
-//         .get(`http://ip-api.com/json/${badHost.remoteHost}`)
-//         .then((location) => {
-//           console.log(badHost.remoteHost, location)
-//         })
-//     }
-//   },
-// })

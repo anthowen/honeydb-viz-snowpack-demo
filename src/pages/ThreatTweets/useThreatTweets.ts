@@ -2,6 +2,7 @@ import { useQuery } from 'react-query'
 import { axiosClient } from '@utils/request'
 import type { ThreatTweet } from '@types'
 
+// API docs: https://honeydb.io/threats#twitter_threat_feed
 const getThreatTweetsByIpAddress = async (ipAddress?: string) => {
   if (!ipAddress) throw new Error('IP address is not provided')
 

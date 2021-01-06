@@ -15,7 +15,7 @@ export default function AppRoutes() {
     <Router>
       <Home path="/" />
       <BadHosts path="/bad-hosts" />
-      <ThreatTweets path="/twitter-threats/:ipAddress" />
+      <ThreatTweets path="/threat-tweets/:ipAddress" />
       <TwitterThreats path="/twitter-threats" />
       <NotFound default />
     </Router>
